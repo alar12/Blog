@@ -1,0 +1,100 @@
+<!-- blog/templates/blog/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #E8F1F2;
+            color: #31493C; /* Text color */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .blog-post {
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 100%%;
+            background-color: #B3EFB2; /* Blog post background color */
+            color: #31493C; /* Blog post text color */
+            border-radius: 15px; /* Rounded corners for blog post */
+            box-shadow: 5px 5px 15px #7A9E7E; /* 3D box effect */
+        }
+
+        .blog-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #31493C; /* Blog title color */
+        }
+
+        .blog-details {
+            font-size: 14px;
+            color: #7A9E7E; /* Blog details color */
+            margin-bottom: 15px;
+        }
+
+        .blog-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #028090; /* Button background color */
+            color: #E8F1F2; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00A896; /* Button background color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Home</h2>
+
+    <div class="user-actions">
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="button">Login</a>
+        {% endif %}
+        <a href="{% url 'create_blog' %}" class="button">Create Blog</a>
+    </div>
+</header>
+
+{% for blog_post in blog_posts %}
+    <div class="blog-post">
+        <div class="blog-title"> <a href="{% url 'blog_detail' blog_post.id %}">{{ blog_post.title }}</a></div>
+        <div class="blog-details">
+            <span>Author: {{ blog_post.author }}</span>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>Created at: {{ blog_post.created_at }}</span>
+            
+        </div>
+        <div class="blog-content">{{ blog_post.content|truncatewords_html:300}}   </div>      <a href="{% url 'blog_detail' blog_post.id %}">Read More</a>
+
+    </div>
+{% endfor %}
+
+</body>
+</html>

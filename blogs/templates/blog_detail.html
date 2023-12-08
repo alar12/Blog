@@ -1,0 +1,68 @@
+<!-- blog/templates/blog/blog_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E8F1F2;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: linear-gradient(145deg, #B3EFB2, #7A9E7E);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: inset 10px 10px 20px #9AC290, inset -10px -10px 20px #9AC290;
+            width: 80%;
+            max-width: 1000px;
+            height:80%;
+        }
+
+        h2 {
+            color: #00A896;
+        }
+
+        p {
+            color: #31493C;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #028090;
+            color: #E8F1F2;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00A896;
+        }
+        .home{
+            position:relative;
+            bottom:48%;
+            left:80%;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}" class="button home"> Home</a>
+
+    <div class="container">
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.content }}</p>
+        <p>Author: {{ blog.author }}</p>
+        <p>Created at: {{ blog.created_at }}</p>
+        <!-- Add any other details you want to display -->
+    </div>
+</body>
+</html>
