@@ -7,8 +7,8 @@
     <title>Register</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #E8F1F2;
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #F7F9FB;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,79 +17,103 @@
             justify-content: center;
             height: 100vh;
         }
-
+    
         form {
-            background-color: #31493C;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 450px;
+            background-color: #4E5D6C;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+            width: 500px;
             max-width: 100%;
-            color: #E8F1F2;
+            color: #FEFEFE;
             margin: 0 auto; /* Center the form horizontally */
         }
-
+    
         h2 {
             text-align: center;
-            color: #00A896;
+            color: #81C784;
+            margin-bottom: 15px; /* Add some space below the title */
         }
-
+    
         label {
             display: block;
-            margin: 10px 0 5px;
-            color: #B3EFB2;
+            margin: 15px 0 8px;
+            color: #A7BCC7;
+            font-weight: bold; /* Make labels bold */
         }
-
+    
         input {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #7A9E7E;
-            border-radius: 5px;
-            background-color: #E8F1F2;
-            color: #31493C;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #A1BBC9;
+            border-radius: 7px;
+            background-color: #F7F9FB;
+            color: #4E5D6C;
+            font-size: 16px; /* Larger font size for better readability */
         }
-
+    
         button {
-            background-color: #028090;
-            color: #E8F1F2;
-            padding: 10px 20px;
+            background-color: #6DA1D4;
+            color: #FEFEFE;
+            padding: 12px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 7px;
             cursor: pointer;
             display: block;
-            margin: 0 auto; /* Center the button horizontally */
+            margin: 20px auto; /* Adjusted margin for better spacing */
+            font-size: 16px;
+            font-weight: bold;
         }
-
+    
         button:hover {
-            background-color: #00A896;
+            background-color: #559DD9;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
         }
-
+    
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #028090;
-            color: #E8F1F2;
+            padding: 12px 25px;
+            background-color: #6DA1D4;
+            color: #FEFEFE;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 7px;
             transition: background-color 0.3s ease;
-            margin: 10px auto; /* Center the button horizontally */
+            margin: 15px auto; /* Center the button horizontally */
+            font-weight: bold;
         }
-
+    
         .button:hover {
-            background-color: #00A896;
+            background-color: #559DD9;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
         }
-
+    
         .error-message {
-            color: red;
-            margin-top: 10px;
+            color: #FF6B6B;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #FFEBEE;
+            font-weight: bold;
         }
-        .home{
-            position:relative;
-            bottom:3%;
-            left:45%;
+        
+        .home {
+            position: relative;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%); /* Center the button relative to its position */
+            background-color: #81C784;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
-    </style>
+    
+        .home:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+    </style>    
 </head>
 <body>
     <a href="{% url 'home' %}" class="button home"> Home</a>

@@ -7,92 +7,112 @@
     <title>Login</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #E8F1F2;
+            font-family: 'Roboto', sans-serif;
+            background-color: #F2F3F8;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items horizontally */
+            align-items: center;
             justify-content: center;
             height: 100vh;
         }
-
+    
         form {
-            background-color: #31493C;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 450px;
+            background-color: #44575E;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
             max-width: 100%;
-            color: #E8F1F2;
-            margin-bottom: 20px; /* Add space between forms */
+            color: #F2F3F8;
+            margin-bottom: 30px;
         }
-
+    
         h2 {
             text-align: center;
-            color: #00A896;
+            color: #FFAD60;
         }
-
+    
         label {
             display: block;
-            margin: 10px 0 5px;
-            color: #B3EFB2;
+            margin: 15px 0 10px;
+            color: #D6D1C4;
+            font-size: 16px;
         }
-
+    
         input {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #7A9E7E;
-            border-radius: 5px;
-            background-color: #E8F1F2;
-            color: #31493C;
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #A1B9C8;
+            border-radius: 8px;
+            background-color: #F2F3F8;
+            color: #44575E;
+            font-size: 14px;
         }
-
+    
         button {
-            background-color: #028090;
-            color: #E8F1F2;
-            padding: 10px 20px;
+            background-color: #42858C;
+            color: #F2F3F8;
+            padding: 15px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             display: block;
             margin: 0 auto;
+            font-weight: bold;
         }
-
+    
         button:hover {
-            background-color: #00A896;
+            background-color: #5AA7A7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-
+    
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #028090;
-            color: #E8F1F2;
+            padding: 15px 25px;
+            background-color: #42858C;
+            color: #F2F3F8;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: background-color 0.3s ease;
-            margin: 10px auto; /* Center the button horizontally */
+            margin: 15px auto;
+            font-weight: bold;
         }
-
+    
         .button:hover {
-            background-color: #00A896;
+            background-color: #5AA7A7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-
+    
         .error-message {
-            background-color: #FF6363;
+            background-color: #E57373;
             color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
         }
-        .home{
-            position:relative;
-            bottom:20%;
-            left:43%;
+        
+        .home {
+            position: relative;
+            bottom: 25%;
+            left: 40%;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background-color: #FFAD60;
+            color: #FFF;
+            transition: transform 0.3s ease;
+        }
+    
+        .home:hover {
+            transform: scale(1.05);
         }
     </style>
+    
 </head>
 <body>
     <a href="{% url 'home' %}" class="button home"> Home</a>
